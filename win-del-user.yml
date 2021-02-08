@@ -1,0 +1,9 @@
+---
+- name: Remove a user
+  hosts: win-ssh
+  gather_facts: false
+  tasks:
+    - name: Remove User
+      win_user:
+        name: yiweitest
+        state: absent

@@ -1,0 +1,10 @@
+---
+- name: Add a user
+  hosts: win-ssh
+  gather_facts: false
+  tasks:
+    - name: Add User
+      win_user:
+        name: yiweitest
+        password: "yiweitest"
+        state: present

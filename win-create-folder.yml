@@ -1,0 +1,9 @@
+---
+- name: Create a Folder
+  hosts: win-ssh
+  gather_facts: false
+  tasks:
+    - name: Create a Folder
+      win_file:
+        path: C:\test_dir\Test_dir
+        state: directory
