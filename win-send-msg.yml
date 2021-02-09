@@ -1,0 +1,9 @@
+---
+- name: Send message to host
+  hosts: win-ssh
+  gather_facts: false
+  tasks:
+    - name: Send message
+      win_msg:
+        display_seconds: 60
+        msg: This is a TEST message from IT Department!
