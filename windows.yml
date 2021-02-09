@@ -1,9 +1,0 @@
----
-- name: Ensure 7-Zip is installed via Chocolatey
-  hosts: win-ssh
-  gather_facts: false
-  tasks:
-    - name: Add User
-      win_chocolatey:
-        name: 7-zip
-        state: present

@@ -1,0 +1,13 @@
+---
+- name: Ensure 7-Zip is installed via Chocolatey
+  hosts: workstation-windows
+  gather_facts: false
+  tasks:
+    - name: Install chocolatey     #This syntax doesn't work on OpenSSH machine
+      win_chocolatey:              #https://github.com/chocolatey/chocolatey-ansible/issues/22
+        name: chocolatey           #https://github.com/ansible/ansible/issues/66989
+        state: present
+    - name: Install 7-Zip
+      win_chocolatey:
+        name: 7zip.portable
+        state: present
